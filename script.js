@@ -24,14 +24,20 @@ function playRound(playerSelection, computerSelection) {
     } else {
         return "You chose wrong weapon";
     }
-};
+}; 
+// Need null and undefined cases!!
+
+
 // Arguments that are gonna be used for game
-let playerSelection = prompt("Choose your weapon wisely!" + '\n' + "Rock, Paper or Scissors");
+let playerSelection = prompt("Choose your weapon wisely!" + '\n' + "Rock, Paper or Scissors are available");
     playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
 const computerSelection = getComputerChoice();
 
 console.log(playRound(playerSelection, computerSelection));
 
+/* how to track result in this game function,
+how to make game just 5 rounds to declare winner
+*/
 function game() {
     
 };
