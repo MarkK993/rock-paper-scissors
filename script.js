@@ -28,17 +28,78 @@ function playRound(playerSelection, computerSelection) {
 // Need null and undefined cases!!
 
 
-// Arguments that are gonna be used for game
-let playerSelection = prompt("Choose your weapon wisely!" + '\n' + "Rock, Paper or Scissors are available");
-    playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
-const computerSelection = getComputerChoice();
+// function to get user input and apply transformations
+    function getUserSelection() {
+        let selection = prompt("Choose your weapon wisely!\nRock, Paper, or Scissors are available");
+        return selection.charAt(0).toUpperCase() + selection.slice(1).toLowerCase();
+    };
 
-console.log(playRound(playerSelection, computerSelection));
+//Score counting and playing the game 5 times
 
-/* how to track result in this game function,
-how to make game just 5 rounds to declare winner
-*/
 function game() {
+    let playerScore = 0;
+    let computerScore = 0;
+
+    const round1PlayerSelection = getUserSelection();
+    const round1ComputerSelection = getComputerChoice();
+    const round1Result = playRound(round1PlayerSelection, round1ComputerSelection);
+    console.log(round1Result);
+    if (round1Result.includes("You won")) {
+        playerScore++;
+    } else if (round1Result.includes("You need")) {
+        computerScore++;
+    }
+
+    const round2PlayerSelection = getUserSelection();
+    const round2ComputerSelection = getComputerChoice();
+    const round2Result = playRound(round2PlayerSelection, round2ComputerSelection);
+    console.log(round2Result);
+    if (round2Result.includes("You won")) {
+        playerScore++;
+    } else if (round2Result.includes("You need")) {
+        computerScore++;
+    }
     
+    const round3PlayerSelection = getUserSelection();
+    const round3ComputerSelection = getComputerChoice();
+    const round3Result = playRound(round3PlayerSelection, round3ComputerSelection);
+    console.log(round3Result);
+    if (round3Result.includes("You won")) {
+        playerScore++;
+    } else if (round3Result.includes("You need")) {
+        computerScore++;
+    }
+
+    const round4PlayerSelection = getUserSelection();
+    const round4ComputerSelection = getComputerChoice();
+    const round4Result = playRound(round4PlayerSelection, round4ComputerSelection);
+    console.log(round4Result);
+    if (round4Result.includes("You won")) {
+        playerScore++;
+    } else if (round4Result.includes("You need")) {
+        computerScore++;
+    }
+
+    const round5PlayerSelection = getUserSelection();
+    const round5ComputerSelection = getComputerChoice();
+    const round5Result = playRound(round5PlayerSelection, round5ComputerSelection);
+    console.log(round4Result);
+    if (round5Result.includes("You won")) {
+        playerScore++;
+    } else if (round5Result.includes("You need")) {
+        computerScore++;
+    }
+    console.log("\nGame Over!");
+    console.log("Your score: " + playerScore);
+    console.log("Computer's score: " + computerScore);
+
+    if (playerScore > computerScore) {
+        console.log("Congratulations young padawan!");
+    } else if (playerScore < computerScore) {
+        console.log("I win! I am still a Master");
+    } else {
+        console.log("It seems that we are equal");
+    }
 };
 
+game();
