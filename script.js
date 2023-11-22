@@ -31,6 +31,13 @@ function playRound(playerSelection, computerSelection) {
 // function to get user input and apply transformations
     function getUserSelection() {
         let selection = prompt("Choose your weapon wisely!\nRock, Paper, or Scissors are available");
+
+        // Check for null and undefined
+    if (selection === null || selection === undefined) {
+        console.log("Invalid input. Exiting game.");
+        return;
+    }
+    
         return selection.charAt(0).toUpperCase() + selection.slice(1).toLowerCase();
     };
 
