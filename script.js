@@ -25,7 +25,6 @@ function playRound(playerSelection, computerSelection) {
         return "You chose wrong weapon";
     }
 }; 
-// Need null and undefined cases!!
 
 
 // function to get user input and apply transformations
@@ -37,7 +36,7 @@ function playRound(playerSelection, computerSelection) {
         console.log("Invalid input. Exiting game.");
         return;
     }
-    
+
         return selection.charAt(0).toUpperCase() + selection.slice(1).toLowerCase();
     };
 
